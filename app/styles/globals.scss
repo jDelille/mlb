@@ -1,0 +1,31 @@
+@import './mixins';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  background-color: #242424;
+  color: #f1f2f3;
+}
+
+body {
+  @include responsive();
+  height: 100vh;
+}
+
+button {
+  all: unset;
+}
+
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}

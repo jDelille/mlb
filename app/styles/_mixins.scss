@@ -1,0 +1,22 @@
+@import './breakpoints';
+
+@mixin responsive() {
+	@include breakpoint(xs) {
+  padding: 0 1rem;
+	}
+	@include breakpoint(sm) {
+  padding: 0 2rem;
+	}
+	@include breakpoint(md) {
+  padding: 0 4rem;
+	}
+	@include breakpoint(lg) {
+  padding: 0 8rem;
+	}
+	@include breakpoint(xl) {
+  padding: 0 10rem;
+	}
+	@include breakpoint(xxl) {
+  padding: 0 12rem;
+	}
+}
