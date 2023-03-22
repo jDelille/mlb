@@ -7,6 +7,7 @@ export type Game = {
  shortName: string;
  id: string;
  date: string;
+ midsizeName: string;
  season: {
   slug: string
 };

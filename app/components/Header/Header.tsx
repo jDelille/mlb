@@ -2,7 +2,7 @@ import './Header.scss';
 
 function Header() {
   return <header className='header flex'>
-   <h1>MLB</h1>
+   <h1>Scores</h1>
   </header>;
 }
 

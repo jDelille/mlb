@@ -17,7 +17,7 @@ export default function GameCard(props: GameCardProps) {
 
 	const slug = props.game.season.slug.replace(/^\w/, (c) => c.toUpperCase());
 
-	console.log(props.game)
+	console.log(props.game);
 
 	const gameStatus = status.type.description;
 
@@ -34,39 +34,38 @@ export default function GameCard(props: GameCardProps) {
 	return (
 		<div className='card flex-col'>
 			<p className='slug'>{slug}</p>
-			<div className="wrapper">
+			<div className='wrapper'>
+				<div className='teams'>
+					<div className='home flex space-between'>
+						<div className='team-container flex gap'>
+							<Image alt='logo' src={homeLogo} width={24} height={24} />
+							<p>{homeName}</p>
+						</div>
+						<div className='score-container'>
+							<div className={homeScore.length > 2 ? 'longScore' : 'score'}>
+								<p>{homeScore}</p> <span>{homeWinner && <Arrow />}</span>
+							</div>
+						</div>
+					</div>
+					<div className='away flex space-between'>
+						<div className='team-container flex gap'>
+							<Image alt='logo' src={awayLogo} width={24} height={24} />
+							<p>{awayName}</p>
+						</div>
+						<div className='score-container'>
+							<div className={homeScore.length > 2 ? 'longScore' : 'score'}>
+								<p>{awayScore}</p>
+								<span>{awayWinner && <Arrow />}</span>
+							</div>
+						</div>
+					</div>
+				</div>
 
-				<div className="teams">
-				<div className='home flex space-between'>
-					<div className='team-container flex gap'>
-						<Image alt='logo' src={homeLogo} width={24} height={24} />
-						<p>{homeName}</p>
-					</div>
-					<div className='score-container'>
-	
-						<p>{homeScore}	{homeWinner && <Arrow />}</p>
-					</div>
+				<div className='status-container'>
+					<p className='status'>{gameStatus}</p>
+					<span>Today</span>
 				</div>
-				<div className='away flex space-between'>
-					<div className='team-container flex gap'>
-						<Image alt='logo' src={awayLogo} width={24} height={24} />
-						<p>{awayName}</p>
-					</div>
-					<div className='score-container'>
-						<p>{awayScore} {awayWinner && <Arrow />}</p>
-					</div>
-				</div>
-				</div>
-			
-			
-			<div className="status-container">
-				<p className="status">{gameStatus}</p>
-				<p>Today</p>
 			</div>
-
-		</div>
 		</div>
 	);
 }
-
-
