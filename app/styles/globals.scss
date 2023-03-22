@@ -1,13 +1,18 @@
 @import './mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 html {
-  background-color: #242424;
+  background-color: #171717;
   color: #f1f2f3;
 }
 
@@ -20,6 +25,11 @@ button {
   all: unset;
 }
 
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 .flex-col {
   display: flex;
@@ -34,3 +44,27 @@ button {
 .gap {
   gap: 1rem;
 }
+
+.space-between {
+  justify-content: space-between;
+}
+
+.card-container {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  background-color: #202124;
+  border-top: 1px solid #3C4043;
+  border-bottom: 1px solid #3C4043;
+
+  @include breakpoint(md) {
+    width: 80%;
+  }
+}
+
+.card-container > div {
+  flex: 50%;
+  flex-grow: 0;
+}
+

@@ -23,14 +23,17 @@ function HomePage() {
   }
 
   return ( 
-  <div className="flex-col">
-    <h1>Welcome to the home page</h1>
-    <h2>MLB Scoreboard</h2>
+  <div className="flex-col container">
+    {/* <h1>Welcome to the home page</h1>
+    <h2>MLB Scoreboard</h2> */}
+    <div className="card-container">
     {data.map((game, i: number) => {
       return (
           <GameCard key={i} game={game} />
         )
     })}
+    </div>
+  
   </div>
   )
 }
