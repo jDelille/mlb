@@ -7,20 +7,27 @@ export type Game = {
  shortName: string;
  id: string;
  date: string;
+ season: {
+  slug: string
+};
  competitions: {
    id: string;
    status: {
-     type: string;
-     detail: string;
-   };
+     type: {
+      description: string;
+    }
+  }
    competitors: [
      {
        id: string;
        name: string;
        score: string;
        homeAway: string;
+       winner: boolean;
        team: {
          abbreviation: string;
+         displayName: string;
+         shortDisplayName: string;
          logo: string;
        };
      },
@@ -29,8 +36,11 @@ export type Game = {
        name: string;
        score: string;
        homeAway: string;
+       winner: boolean;
        team: {
-         abbreviation: string;
+        abbreviation: string;
+         displayName: string;
+         shortDisplayName: string;
          logo: string;
        };
      }
